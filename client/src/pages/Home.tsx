@@ -8,10 +8,44 @@ import { useState } from "react";
  * - Geometric typography using Space Grotesk for headers
  * - Subtle animations and hover effects
  * - Asymmetric layout with generous whitespace
+ * Language: English
  */
 
 export default function Home() {
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+
+  const portfolioItems = [
+    {
+      id: 1,
+      image: "/wagnercraft-portfolio/images/portfolio-1.png",
+      title: "AI Futuristic Landscape",
+      category: "AI Generation"
+    },
+    {
+      id: 2,
+      image: "/wagnercraft-portfolio/images/portfolio-2.png",
+      title: "Campaign Design",
+      category: "Marketing"
+    },
+    {
+      id: 3,
+      image: "/wagnercraft-portfolio/images/portfolio-3.png",
+      title: "Soccer Team Logo",
+      category: "Sports Branding"
+    },
+    {
+      id: 4,
+      image: "/wagnercraft-portfolio/images/portfolio-4.png",
+      title: "Cosmic Digital Art",
+      category: "AI Generation"
+    },
+    {
+      id: 5,
+      image: "/wagnercraft-portfolio/images/portfolio-5.png",
+      title: "Social Media Campaign",
+      category: "Copywriting"
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-hidden">
@@ -23,13 +57,13 @@ export default function Home() {
           </div>
           <div className="hidden md:flex gap-8">
             <a href="#services" className="text-foreground/70 hover:text-primary transition-colors">
-              Serviços
+              Services
             </a>
             <a href="#portfolio" className="text-foreground/70 hover:text-primary transition-colors">
-              Portfólio
+              Portfolio
             </a>
             <a href="#contact" className="text-foreground/70 hover:text-primary transition-colors">
-              Contato
+              Contact
             </a>
           </div>
         </div>
@@ -41,7 +75,7 @@ export default function Home() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: "url('/images/hero-bg.png')",
+            backgroundImage: "url('/wagnercraft-portfolio/images/hero-bg.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -55,17 +89,17 @@ export default function Home() {
               <div className="inline-block px-4 py-2 rounded-full border border-primary/30 bg-primary/5">
                 <span className="text-primary text-sm font-medium flex items-center gap-2">
                   <Sparkles size={16} />
-                  Criatividade Potencializada por IA
+                  Creativity Powered by AI
                 </span>
               </div>
               <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                Transforme suas ideias em
+                Transform Your Ideas Into
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary ml-2">
-                  realidade visual
+                  Visual Reality
                 </span>
               </h1>
               <p className="text-lg text-foreground/70 leading-relaxed max-w-lg">
-                Especializado em geração de imagens com IA, copywriting estratégico, criação de campanhas e logos esportivos de alta qualidade.
+                Specialized in AI image generation, strategic copywriting, campaign creation, and professional sports logo design.
               </p>
             </div>
 
@@ -74,7 +108,7 @@ export default function Home() {
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg"
               >
-                Começar Projeto
+                Start Project
                 <ArrowRight className="ml-2" size={18} />
               </Button>
               <Button
@@ -82,7 +116,7 @@ export default function Home() {
                 variant="outline"
                 className="border-primary/30 text-primary hover:bg-primary/10 rounded-lg"
               >
-                Ver Portfólio
+                View Portfolio
               </Button>
             </div>
           </div>
@@ -91,7 +125,7 @@ export default function Home() {
           <div className="hidden md:flex items-center justify-center">
             <div className="relative w-96 h-96">
               <img
-                src="/images/accent-blob.png"
+                src="/wagnercraft-portfolio/images/accent-blob.png"
                 alt="Accent"
                 className="w-full h-full object-contain animate-pulse"
               />
@@ -105,10 +139,10 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Serviços
+              Services
             </h2>
             <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
-              Soluções completas para suas necessidades criativas e de marketing
+              Complete solutions for your creative and marketing needs
             </p>
           </div>
 
@@ -117,26 +151,26 @@ export default function Home() {
             {[
               {
                 icon: Sparkles,
-                title: "Geração de Imagens com IA",
-                description: "Crie imagens únicas e personalizadas usando tecnologia de IA de ponta. Perfeito para campanhas, redes sociais e materiais promocionais.",
+                title: "AI Image Generation",
+                description: "Create unique and personalized images using cutting-edge AI technology. Perfect for campaigns, social media, and promotional materials.",
                 color: "from-primary to-secondary",
               },
               {
                 icon: Zap,
-                title: "Copywriting Estratégico",
-                description: "Textos persuasivos e bem estruturados que convertem. Desde headlines impactantes até descrições de produtos completas.",
+                title: "Strategic Copywriting",
+                description: "Persuasive and well-structured texts that convert. From impactful headlines to complete product descriptions.",
                 color: "from-secondary to-primary",
               },
               {
                 icon: Target,
-                title: "Criação de Campanhas",
-                description: "Campanhas integradas e estratégicas para maximizar seu alcance. Planejamento, execução e análise de resultados.",
+                title: "Campaign Creation",
+                description: "Integrated and strategic campaigns to maximize your reach. Planning, execution, and results analysis.",
                 color: "from-primary to-secondary",
               },
               {
                 icon: Palette,
-                title: "Logos Esportivos",
-                description: "Identidades visuais marcantes para times e eventos esportivos. Design profissional com impacto visual garantido.",
+                title: "Sports Logos",
+                description: "Striking visual identities for teams and sporting events. Professional design with guaranteed visual impact.",
                 color: "from-secondary to-primary",
               },
             ].map((service, idx) => {
@@ -152,7 +186,7 @@ export default function Home() {
                   <div
                     className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity rounded-lg"
                     style={{
-                      backgroundImage: "url('/images/services-pattern.png')",
+                      backgroundImage: "url('/wagnercraft-portfolio/images/services-pattern.png')",
                       backgroundSize: "cover",
                     }}
                   />
@@ -167,7 +201,7 @@ export default function Home() {
                       {service.description}
                     </p>
                     <div className="pt-4 flex items-center gap-2 text-primary font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      Saiba mais
+                      Learn More
                       <ArrowRight size={16} />
                     </div>
                   </div>
@@ -188,27 +222,28 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Portfólio
+              Portfolio
             </h2>
             <p className="text-foreground/60 text-lg max-w-2xl mx-auto">
-              Projetos recentes que demonstram nossa expertise e criatividade
+              Recent projects showcasing our expertise and creativity
             </p>
           </div>
 
-          {/* Portfolio Grid - Placeholder */}
+          {/* Portfolio Grid */}
           <div className="grid md:grid-cols-3 gap-8">
-            {[1, 2, 3, 4, 5, 6].map((item) => (
+            {portfolioItems.map((item) => (
               <div
-                key={item}
-                className="group relative aspect-square rounded-lg overflow-hidden border border-border bg-card/30 hover:border-primary/50 transition-all duration-300"
+                key={item.id}
+                className="group relative aspect-square rounded-lg overflow-hidden border border-border bg-card/30 hover:border-primary/50 transition-all duration-300 cursor-pointer"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <div className="text-4xl font-bold text-primary/30">
-                      {item}
-                    </div>
-                    <p className="text-foreground/40 text-sm">Projeto em destaque</p>
-                  </div>
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-primary text-sm">{item.category}</p>
                 </div>
               </div>
             ))}
@@ -221,16 +256,16 @@ export default function Home() {
         <div className="container">
           <div className="relative rounded-lg border border-primary/30 bg-gradient-to-r from-primary/10 to-secondary/10 p-12 md:p-16 text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold">
-              Pronto para começar?
+              Ready to Get Started?
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              Entre em contato conosco e vamos transformar sua visão em realidade. Estamos prontos para criar algo extraordinário.
+              Contact us and let's transform your vision into reality. We're ready to create something extraordinary.
             </p>
             <Button
               size="lg"
               className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-lg"
             >
-              Iniciar Conversa
+              Start Conversation
               <ArrowRight className="ml-2" size={18} />
             </Button>
           </div>
@@ -244,30 +279,30 @@ export default function Home() {
             <div>
               <h3 className="font-bold text-lg mb-4">Wagnercraft</h3>
               <p className="text-foreground/60 text-sm">
-                Criatividade potencializada por tecnologia.
+                Creativity powered by technology.
               </p>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Serviços</h4>
+              <h4 className="font-semibold mb-4">Services</h4>
               <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="#" className="hover:text-primary transition-colors">Geração de Imagens</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">AI Image Generation</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Copywriting</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Campanhas</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Logos</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Campaigns</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Sports Logos</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Empresa</h4>
+              <h4 className="font-semibold mb-4">Company</h4>
               <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="#" className="hover:text-primary transition-colors">Sobre</a></li>
-                <li><a href="#" className="hover:text-primary transition-colors">Portfólio</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">About</a></li>
+                <li><a href="#" className="hover:text-primary transition-colors">Portfolio</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Blog</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="font-semibold mb-4">Contato</h4>
+              <h4 className="font-semibold mb-4">Contact</h4>
               <ul className="space-y-2 text-sm text-foreground/60">
-                <li><a href="mailto:contato@wagnercraft.com" className="hover:text-primary transition-colors">Email</a></li>
+                <li><a href="mailto:contact@wagnercraft.com" className="hover:text-primary transition-colors">Email</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">LinkedIn</a></li>
                 <li><a href="#" className="hover:text-primary transition-colors">Instagram</a></li>
               </ul>
@@ -275,7 +310,7 @@ export default function Home() {
           </div>
 
           <div className="border-t border-border pt-8 text-center text-sm text-foreground/60">
-            <p>&copy; 2026 Wagnercraft. Todos os direitos reservados.</p>
+            <p>&copy; 2026 Wagnercraft. All rights reserved.</p>
           </div>
         </div>
       </footer>
